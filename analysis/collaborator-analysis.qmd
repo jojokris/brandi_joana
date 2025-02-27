@@ -59,9 +59,26 @@ unique(lobster_traps_temp_2$SITE)
 
 ```
 
+## Question 3
+
 ```{r}
 #Create and store a subset with lobsters at Carpinteria Reef (CARP) AND number of commercial trap floats is greater than 20. Check your output.
 
 lobster_traps_temp_3 <- lobster_traps_temp %>% 
   filter(SITE =="CARP", TRAPS >20)
+```
+
+## Question 4
+
+```{r}
+#Find the maximum number of commercial trap floats using max() and group by SITE and MONTH. Think about how you want to treat the NA values in TRAPS (Hint: check the arguments in max()). Check your output.
+
+unique(lobster_traps$MONTH)
+unique(lobster_traps$SITE)
+unique(lobster_traps_temp_2$TRAPS)
+
+lobster_traps_temp_4 <- lobster_traps %>%
+  group_by(SITE, MONTH)
+
+  
 ```
