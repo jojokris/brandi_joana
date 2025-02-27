@@ -43,7 +43,18 @@ print(unique_traps)
 ## **Question 2**
 
 ```{r}
+## Prints unique values in a column (in this case, the region)
+unique(lobster_traps$SITE)
+```
+
+```{r}
 #Create and store a subset that does NOT include observations from Naples Reef (NAPL). Check your output data frame to ensure that NAPL is NOT in the data frame
+ 
+lobster_traps_temp_2 <- lobster_traps_temp %>% 
+  filter(SITE %in% c("ABUR", "AHND", "AQUE", "CARP", "GOLB", "IVEE", "MOHK", "AHND to AQUE", "AHND TO AQUE"))
+
+## Prints unique values in a column (in this case, the region)
+unique(lobster_traps_temp_2$SITE)
 
 
 ```
