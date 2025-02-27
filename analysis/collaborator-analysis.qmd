@@ -78,7 +78,11 @@ unique(lobster_traps$SITE)
 unique(lobster_traps_temp_2$TRAPS)
 
 lobster_traps_temp_4 <- lobster_traps %>%
-  group_by(SITE, MONTH)
+  group_by(SITE, MONTH) %>%
+  summarize(max(TRAPS, na.rm = TRUE))  # Calculate the max of TRAPS for each group
+
+# View the result
+View(lobster_traps_temp_4)
 
   
 ```
