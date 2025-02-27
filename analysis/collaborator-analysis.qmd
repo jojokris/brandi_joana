@@ -17,3 +17,33 @@ library(here)
 ```{r}
 lobster_traps <- read_csv("data/Lobster_Trap_Counts_All_Years_20210519.csv")
 ```
+
+## Convert missing values
+
+```{r}
+
+## Prints unique values in a column (in this case, the region)
+unique(lobster_traps$TRAPS)
+
+```
+
+```{r}
+
+# Replacing -99999 with NA in the TRAPS column
+lobster_traps_temp <- lobster_traps %>%
+  mutate(TRAPS = na_if(TRAPS, -99999))
+
+# Get unique values from the TRAPS column
+unique_traps <- unique(lobster_traps_temp$TRAPS)
+
+# If you want to view the unique values
+print(unique_traps)
+```
+
+## **Question 2**
+
+```{r}
+#Create and store a subset that does NOT include observations from Naples Reef (NAPL). Check your output data frame to ensure that NAPL is NOT in the data frame
+
+
+```
