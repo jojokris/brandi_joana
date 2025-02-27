@@ -1,7 +1,7 @@
 ---
-title: "Owner Analysis"
+title: "Joana Analysis"
 format: html
 editor: visual
 ---
 
-## 
+## Exercise: Explore, Clean, and Wrangle Data
