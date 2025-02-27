@@ -58,3 +58,10 @@ unique(lobster_traps_temp_2$SITE)
 
 
 ```
+
+```{r}
+#Create and store a subset with lobsters at Carpinteria Reef (CARP) AND number of commercial trap floats is greater than 20. Check your output.
+
+lobster_traps_temp_3 <- lobster_traps_temp %>% 
+  filter(SITE =="CARP", TRAPS >20)
+```
