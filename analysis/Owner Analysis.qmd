@@ -19,6 +19,33 @@ lobster_abundance <- read_csv("data/Lobster_Abundance_All_Years_20220829.csv")
 ```
 
 ```{r}
+# summarize() practice
 summary(lobster_abundance)
+```
+
+
+```{r}
+#  Replace -99999 with NA in SIZE_MM column
+lobster_abundance <- lobster_abundance %>%
+  mutate(SIZE_MM = na_if( SIZE_MM, -99999))
+```
+
+```{r}
+# remove NAPL
+not_napl <- lobster_abundance %>% 
+    filter(SITE != "NAPL")
+```
+
+```{r}
+# create subset of Lobsters at AQUE and length greater than 70mm 
+aque_70mm <- lobster_abundance %>% 
+    filter(SITE == "AQUE" & SIZE_MM >= 70)
+```
+
+```{r}
+# tracing maximum length and group bby SITE and MONTH
+max_lobster <- lobster_abundance %>% 
+  group_by(SITE, MONTH) %>% 
+  summarize(MAX_LENGTH = max(SIZE_MM, na.rm = TRUE))
 ```
 
